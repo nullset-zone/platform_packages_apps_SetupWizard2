@@ -47,7 +47,7 @@
     <string name="try_it">Try it</string>
     <string name="oem_unlocked_warning">The bootloader is unlocked and software integrity can not be guaranteed. Any data stored on this device may be available to attackers. Do not store any sensitive data on this device.</string>
     <string name="visit_this_link_on_another_device">Visit this link on another device:</string>
-    <string name="oem_lock_url" translatable="false">grapheneos.org/UBL</string>
+    <string name="oem_lock_url" translatable="false">guardtalk.io/UBL</string>
     <string name="lock_your_bootloader">Lock your bootloader</string>
     <string name="oem_unlock_fullscreen_desc">
         The bootloader is unlocked and software integrity
