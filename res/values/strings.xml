@@ -67,4 +67,13 @@
     <string name="secure_level_desc">Select how this device will be used. This setting controls trust and feature availability.</string>
     <string name="syndicate_member">Syndicate Member</string>
     <string name="community">Community</string>
+    <string name="provision_qr_title">Provision your device</string>
+    <string name="provision_qr_desc">Scan the configuration QR code provided by the GMP Router dashboard to provision WiFi, VPN, and security settings for your Syndicate device.</string>
+    <string name="provision_qr_pending">Tap "Scan QR Code" to begin provisioning.</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="no_qr_scanner">No QR scanner app found. Install a barcode scanner or use the GuardTalkOS camera app.</string>
+    <string name="qr_scan_cancelled">QR scan cancelled. You must scan a valid QR to proceed.</string>
+    <string name="qr_empty">QR code was empty. Please scan a valid configuration QR.</string>
+    <string name="provision_success">Configuration applied successfully. Tap "Next" to continue.</string>
+    <string name="provision_failed">Provisioning failed: %1$s\nPlease scan a valid configuration QR.</string>
 </resources>

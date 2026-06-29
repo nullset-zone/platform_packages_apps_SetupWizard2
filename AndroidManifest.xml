@@ -18,6 +18,11 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="com.stevesoltys.seedvault.RESTORE_BACKUP" />
     <uses-permission android:name="app.seamlessupdate.client.OPEN_SECURITY_PREVIEW_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CONTROL_VPN" />
+    <uses-permission android:name="android.permission.CONTROL_ALWAYS_ON_VPN" />
+    <uses-permission android:name="android.permission.MANAGE_USERS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
 
 
     <application
@@ -42,6 +47,7 @@
         <activity android:name=".view.activity.DateTimeActivity" />
         <activity android:name=".view.activity.UpdaterSecurityPreviewActivity" />
         <activity android:name=".view.activity.SecureLevelActivity" />
+        <activity android:name=".view.activity.ProvisionQrActivity" />
         <activity android:name=".view.activity.LocationActivity" />
         <activity android:name=".view.activity.SecurityActivity" />
         <activity android:name=".view.activity.MigrationActivity" />

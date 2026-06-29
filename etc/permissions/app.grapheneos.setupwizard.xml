@@ -14,5 +14,10 @@
         <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
         <permission name="android.permission.WRITE_SETTINGS"/>
         <permission name="com.stevesoltys.seedvault.RESTORE_BACKUP"/>
+        <permission name="android.permission.CHANGE_WIFI_STATE"/>
+        <permission name="android.permission.CONTROL_VPN"/>
+        <permission name="android.permission.CONTROL_ALWAYS_ON_VPN"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
     </privapp-permissions>
 </permissions>

@@ -1,5 +1,6 @@
 package app.grapheneos.setupwizard.view.activity
 
+import android.content.Intent
 import android.widget.RadioGroup
 import app.grapheneos.setupwizard.R
 import app.grapheneos.setupwizard.action.SecureLevelActions
@@ -33,7 +34,14 @@ class SecureLevelActivity : SetupWizardActivity(
                 else -> SecureLevelData.VALUE_SYNDICATE
             }
             SecureLevelActions.persistSelection(this, value)
-            SetupWizard.next(this)
+            if (value == SecureLevelData.VALUE_SYNDICATE) {
+                // T-SUW-PROVISION-QR: Syndicate members must scan the GMP Router
+                // QR before they can proceed. Community members skip this step.
+                startActivity(Intent(this, ProvisionQrActivity::class.java))
+                finish()
+            } else {
+                SetupWizard.next(this)
+            }
         }
     }
 }
