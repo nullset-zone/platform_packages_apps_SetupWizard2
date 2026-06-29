@@ -63,4 +63,8 @@
     <string name="oem_unlock_ack_risks">I understand the security risks of not locking my bootloader.</string>
     <string name="disable_oem_unlocking">Disable OEM unlocking</string>
     <string name="disable_oem_unlocking_desc">It\'s recommended to disable OEM unlocking to improve device security</string>
+    <string name="secure_level_title">Choose your security level</string>
+    <string name="secure_level_desc">Select how this device will be used. This setting controls trust and feature availability.</string>
+    <string name="syndicate_member">Syndicate Member</string>
+    <string name="community">Community</string>
 </resources>

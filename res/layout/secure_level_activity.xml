@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.setupdesign.GlifLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/glif_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RadioGroup
+        android:id="@+id/secure_level_radio_group"
+        style="@style/SudContentFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/sud_content_frame_padding_bottom">
+
+        <RadioButton
+            android:id="@+id/secure_level_syndicate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/syndicate_member"
+            android:textAppearance="@style/TextAppearance.SudGlifItemTitle" />
+
+        <RadioButton
+            android:id="@+id/secure_level_community"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sud_content_frame_padding_bottom"
+            android:text="@string/community"
+            android:textAppearance="@style/TextAppearance.SudGlifItemTitle" />
+    </RadioGroup>
+</com.google.android.setupdesign.GlifLayout>

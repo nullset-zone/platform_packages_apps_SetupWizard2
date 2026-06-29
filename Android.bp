@@ -3,10 +3,16 @@ android_app {
     // T-WIZ-GESTURES-REMOVE: exclude the Gestures wizard step source files.
     // The GesturesActivity activity entry is also removed from
     // AndroidManifest.xml so the wizard no longer offers a gestures page.
+    // T-SUW-RM-WIFI: exclude the Wifi wizard step source files for both
+    // primary and secondary user paths. The WifiActivity manifest entry is
+    // also removed. Source files are retained (Law 11 reversibility) so the
+    // step can be restored by removing these excludes.
     srcs: ["java/**/*.kt"],
     exclude_srcs: [
         "java/app/grapheneos/setupwizard/view/activity/GesturesActivity.kt",
         "java/app/grapheneos/setupwizard/action/GesturesActions.kt",
+        "java/app/grapheneos/setupwizard/view/activity/WifiActivity.kt",
+        "java/app/grapheneos/setupwizard/action/WifiActions.kt",
     ],
     resource_dirs: ["res"],
     manifest: "AndroidManifest.xml",
