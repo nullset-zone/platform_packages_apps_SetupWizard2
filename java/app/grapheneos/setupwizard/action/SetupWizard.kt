@@ -27,13 +27,13 @@ object SetupWizard {
     private val primaryUserActivities = listOf<Class<out Activity>>(
         WelcomeActivity::class.java,
         SecureLevelActivity::class.java,
-        // T-SUW-PROVISION-QR: ProvisionQrActivity is intentionally NOT in this
-        // list. SecureLevelActivity routes to it directly for Syndicate members
-        // (see SecureLevelActivity#setupActions); Community members call
-        // SetupWizard.next(this) which advances SecureLevel → DateTimeActivity,
-        // skipping the QR step. After a successful QR scan, ProvisionQrActivity
-        // calls SetupWizard.next(this, SecureLevelActivity::class.java) to
-        // advance from SecureLevel's position to DateTimeActivity.
+        // T-SUW-PROVISION-QR / F-SUW-LOCK-UI: ProvisionQrActivity and
+        // CommunityLockActivity are intentionally NOT in this list.
+        // SecureLevelActivity routes Syndicate → ProvisionQrActivity and
+        // Community → CommunityLockActivity (startActivity + finish). Both
+        // skip the other edition's step. On success each calls
+        // SetupWizard.next(this, SecureLevelActivity::class.java) to advance
+        // from SecureLevel's position to DateTimeActivity.
         DateTimeActivity::class.java,
         SecurityActivity::class.java,
         UpdaterSecurityPreviewActivity::class.java,

@@ -68,12 +68,32 @@
     <string name="syndicate_member">Syndicate Member</string>
     <string name="community">Community</string>
     <string name="provision_qr_title">Provision your device</string>
-    <string name="provision_qr_desc">Scan the configuration QR code provided by the GMP Router dashboard to provision WiFi, VPN, and security settings for your Syndicate device.</string>
-    <string name="provision_qr_pending">Tap "Scan QR Code" to begin provisioning.</string>
+    <string name="provision_qr_desc">Scan the configuration QR code provided by the GMP Router dashboard to provision WiFi, VPN, security settings, and the device unlock password for your Syndicate device.</string>
+    <string name="provision_qr_pending">Tap "Scan QR Code" to begin provisioning. Next stays disabled until configuration and device password succeed.</string>
     <string name="scan_qr_code">Scan QR Code</string>
     <string name="no_qr_scanner">No QR scanner app found. Install a barcode scanner or use the GuardTalkOS camera app.</string>
     <string name="qr_scan_cancelled">QR scan cancelled. You must scan a valid QR to proceed.</string>
     <string name="qr_empty">QR code was empty. Please scan a valid configuration QR.</string>
-    <string name="provision_success">Configuration applied successfully. Tap "Next" to continue.</string>
+    <string name="provision_success">Device password applied from QR. Network configuration applied. Tap "Next" to continue.</string>
     <string name="provision_failed">Provisioning failed: %1$s\nPlease scan a valid configuration QR.</string>
+    <string name="provision_failed_generic">Provisioning failed. Scan a valid signed configuration QR. Next remains disabled.</string>
+    <string name="provision_failed_signature">QR signature invalid or tampered. Scan a valid signed configuration QR.</string>
+    <string name="provision_failed_missing_fields">QR is missing required provisioning fields. Scan a complete configuration QR.</string>
+    <string name="provision_failed_device_password">Device password from QR was missing or rejected. Scan a valid signed QR that includes a device password.</string>
+    <string name="provision_failed_lock_apply">Could not apply the device unlock password from QR. Scan again or contact your administrator.</string>
+    <string name="provision_failed_network">Could not apply Wi‑Fi or VPN from the configuration QR. Next remains disabled. Scan again or contact your administrator.</string>
+
+    <string name="community_lock_title">Set device password</string>
+    <string name="community_lock_desc">Create a password to unlock this device. PIN and pattern are not available on this edition.</string>
+    <string name="community_lock_password_label">Password</string>
+    <string name="community_lock_password_hint">Enter password</string>
+    <string name="community_lock_confirm_label">Confirm password</string>
+    <string name="community_lock_confirm_hint">Re-enter password</string>
+    <string name="community_lock_pending">Enter and confirm your password, then tap Next.</string>
+    <string name="community_lock_success">Device password set. Continuing…</string>
+    <string name="community_lock_mismatch">Passwords do not match. Try again.</string>
+    <string name="community_lock_empty">Password cannot be empty.</string>
+    <string name="community_lock_too_short">Password is too short. Choose a longer password.</string>
+    <string name="community_lock_quality_rejected">Password does not meet security requirements. Try a different password.</string>
+    <string name="community_lock_apply_failed">Could not set the device password. Try again.</string>
 </resources>

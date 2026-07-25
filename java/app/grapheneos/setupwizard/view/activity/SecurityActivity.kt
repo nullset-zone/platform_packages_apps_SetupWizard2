@@ -22,14 +22,20 @@ class SecurityActivity : ProxyActivity() {
             SetupWizard.next(this)
             return
         }
-        // GuardTalk (F-WIZ-FP): when the fingerprint HAL is excised and no face
-        // biometric is available, the BIOMETRIC_ENROLL intent has no target and
-        // would crash/hang. Skip forward to the next wizard step instead. This
-        // mirrors the existing skip pattern (cf. UpdaterSecurityPreviewActivity).
+        // GuardTalk (F-WIZ-FP / T-SUW-LOCK-BACKSTOP): fingerprint HAL excised and
+        // no face biometric — BIOMETRIC_ENROLL has no target. Do not advance the
+        // wizard when the device still lacks a lock credential (fail-closed).
+        // Password-only policy unchanged; do not fall back to PIN/pattern setup.
         if (!hasBiometricFeature()) {
-            Log.d(TAG, "onCreate: skipping, no fingerprint/face feature present")
+            Log.w(
+                TAG,
+                "onCreate: refusing advance: no fingerprint/face feature and " +
+                    "device not secure"
+            )
+            setMovingForward()
             finish()
-            SetupWizard.next(this)
+            // Deliberately omit SetupWizard.next — M1 secure backstop.
+            return
         }
     }
 

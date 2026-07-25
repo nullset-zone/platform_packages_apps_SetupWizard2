@@ -23,6 +23,9 @@
     <uses-permission android:name="android.permission.CONTROL_ALWAYS_ON_VPN" />
     <uses-permission android:name="android.permission.MANAGE_USERS" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <!-- T-SUW-LOCK-APPLY: set initial / verify lockscreen password via LockPatternUtils -->
+    <uses-permission android:name="android.permission.SET_AND_VERIFY_LOCKSCREEN_CREDENTIALS" />
+    <uses-permission android:name="android.permission.SET_INITIAL_LOCK" />
 
 
     <application
@@ -48,6 +51,7 @@
         <activity android:name=".view.activity.UpdaterSecurityPreviewActivity" />
         <activity android:name=".view.activity.SecureLevelActivity" />
         <activity android:name=".view.activity.ProvisionQrActivity" />
+        <activity android:name=".view.activity.CommunityLockActivity" />
         <activity android:name=".view.activity.LocationActivity" />
         <activity android:name=".view.activity.SecurityActivity" />
         <activity android:name=".view.activity.MigrationActivity" />

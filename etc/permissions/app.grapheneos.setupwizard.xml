@@ -19,5 +19,8 @@
         <permission name="android.permission.CONTROL_ALWAYS_ON_VPN"/>
         <permission name="android.permission.MANAGE_USERS"/>
         <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+        <!-- T-SUW-LOCK-APPLY: LockPatternUtils.setLockCredential (password-only) -->
+        <permission name="android.permission.SET_AND_VERIFY_LOCKSCREEN_CREDENTIALS"/>
+        <permission name="android.permission.SET_INITIAL_LOCK"/>
     </privapp-permissions>
 </permissions>

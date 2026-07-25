@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.setupdesign.GlifLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/glif_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        style="@style/SudContentFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/sud_content_frame_padding_bottom">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/community_lock_password"
+            android:text="@string/community_lock_password_label"
+            android:textAppearance="@style/TextAppearance.SudGlifItemTitle" />
+
+        <EditText
+            android:id="@+id/community_lock_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sud_content_frame_padding_bottom"
+            android:autofillHints="newPassword"
+            android:hint="@string/community_lock_password_hint"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="yes"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.SudGlifItemSummary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sud_content_frame_padding_bottom"
+            android:labelFor="@+id/community_lock_password_confirm"
+            android:text="@string/community_lock_confirm_label"
+            android:textAppearance="@style/TextAppearance.SudGlifItemTitle" />
+
+        <EditText
+            android:id="@+id/community_lock_password_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sud_content_frame_padding_bottom"
+            android:autofillHints="newPassword"
+            android:hint="@string/community_lock_confirm_hint"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="yes"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textAppearance="@style/TextAppearance.SudGlifItemSummary" />
+
+        <TextView
+            android:id="@+id/community_lock_status_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sud_content_frame_padding_bottom"
+            android:accessibilityLiveRegion="polite"
+            android:textAppearance="@style/TextAppearance.SudGlifItemSummary"
+            tools:text="Status" />
+    </LinearLayout>
+</com.google.android.setupdesign.GlifLayout>

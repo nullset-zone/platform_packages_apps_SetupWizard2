@@ -4,7 +4,6 @@ import android.content.Intent
 import android.widget.RadioGroup
 import app.grapheneos.setupwizard.R
 import app.grapheneos.setupwizard.action.SecureLevelActions
-import app.grapheneos.setupwizard.action.SetupWizard
 import app.grapheneos.setupwizard.data.SecureLevelData
 
 class SecureLevelActivity : SetupWizardActivity(
@@ -36,11 +35,15 @@ class SecureLevelActivity : SetupWizardActivity(
             SecureLevelActions.persistSelection(this, value)
             if (value == SecureLevelData.VALUE_SYNDICATE) {
                 // T-SUW-PROVISION-QR: Syndicate members must scan the GMP Router
-                // QR before they can proceed. Community members skip this step.
+                // QR before they can proceed. Community members skip QR.
                 startActivity(Intent(this, ProvisionQrActivity::class.java))
                 finish()
             } else {
-                SetupWizard.next(this)
+                // F-SUW-LOCK-UI / DEC-SUW-LOCK-001: Community sets unlock password
+                // on CommunityLockActivity (not in primaryUserActivities). Do not
+                // call SetupWizard.next(this) here — that would skip lock setup.
+                startActivity(Intent(this, CommunityLockActivity::class.java))
+                finish()
             }
         }
     }
