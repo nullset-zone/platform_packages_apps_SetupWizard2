@@ -3,6 +3,7 @@ package app.grapheneos.setupwizard.view.activity
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.util.Base64
 import android.util.Log
 import android.widget.Button
@@ -61,6 +62,9 @@ class ProvisionQrActivity : SetupWizardActivity(
         private const val TAG = "ProvisionQrActivity"
         private const val REQUEST_SCAN = 0x5151
 
+        // Production Ed25519 public key (32 raw bytes). Populate before building user releases.
+        private val PRODUCTION_PUBLIC_KEY: ByteArray? = null
+
         // Ed25519 test public key — MUST match QrPayloadParser in GuardTalkConfig.
         // Private seed is NEVER committed (out-of-tree only). Production must
         // replace this with the real public key.
@@ -68,6 +72,19 @@ class ProvisionQrActivity : SetupWizardActivity(
             -74, 62, -37, -122, 21, 101, -32, -53, -17, 56, 119, 52, -124, 57, 19, 100,
             85, -83, -30, -53, -75, -13, 50, 31, -30, -8, 84, 25, 69, 108, 18, -43
         )
+
+        private fun activePublicKey(): ByteArray {
+            val prodKey = PRODUCTION_PUBLIC_KEY
+            if (prodKey != null && prodKey.size == 32) {
+                return prodKey
+            }
+            if ("user".equals(Build.TYPE, ignoreCase = true)) {
+                throw InvalidPayloadException(
+                    "Refusing TEST_PUBLIC_KEY on user build — production Ed25519 key not configured"
+                )
+            }
+            return TEST_PUBLIC_KEY
+        }
     }
 
     override fun bindViews() {
@@ -240,7 +257,7 @@ class ProvisionQrActivity : SetupWizardActivity(
 
     private fun verifyEd25519(message: ByteArray, signature: ByteArray) {
         val keyFactory = KeyFactory.getInstance("Ed25519")
-        val publicKey = keyFactory.generatePublic(X509EncodedKeySpec(encodeSpki(TEST_PUBLIC_KEY)))
+        val publicKey = keyFactory.generatePublic(X509EncodedKeySpec(encodeSpki(activePublicKey())))
         val verifier = Signature.getInstance("Ed25519")
         verifier.initVerify(publicKey)
         verifier.update(message)
